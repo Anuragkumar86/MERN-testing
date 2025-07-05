@@ -21,7 +21,7 @@ app.post("/sum", async (req: any, res: any) => {
 
      if(parsedResponse.data.a > 1000000 || parsedResponse.data.b > 1000){
         return res.status(411).json({
-            message: "very big numbers"
+            message: "very big number"
         })
     }
 
