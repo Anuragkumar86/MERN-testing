@@ -1,6 +1,11 @@
 name: CI/CD Pipeline
 
 on:
+  push:
+    branches:
+      - main
+
+on:
   pull_request:
     branches:
       - main
@@ -19,7 +24,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        working-directory: 5-express-vitest-prisma
+        working-directory: vitest-testing
         run: npm install && npx prisma generate
 
       - name: Run tests
